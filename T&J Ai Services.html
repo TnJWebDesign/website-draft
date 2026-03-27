@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>T&J AI Services</title>
+
+<!-- YOUR ICON (replace path if needed) -->
+<link rel="icon" type="image/png" href="/assets/logo-icon.png">
+<link rel="apple-touch-icon" href="/assets/logo-icon.png">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<style>
+html { scroll-behavior:smooth; }
+body { background:#000; }
+
+.glass {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.featured-plan {
+    background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 0 80px rgba(255,255,255,0.15);
+    transform: scale(1.06);
+}
+
+.btn-primary {
+    background:white;
+    color:black;
+    padding:14px 32px;
+    border-radius:12px;
+    font-weight:600;
+    transition: all .3s ease;
+}
+.btn-primary:hover {
+    background:#e5e5e5;
+}
+
+.btn-secondary {
+    border:1px solid rgba(255,255,255,0.3);
+    padding:14px 32px;
+    border-radius:12px;
+    transition: all .3s ease;
+}
+.btn-secondary:hover {
+    background:rgba(255,255,255,0.1);
+}
+</style>
+</head>
+
+<body class="text-white font-sans">
+
+<!-- NAV -->
+<nav class="fixed w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<div class="flex items-center space-x-3">
+<img src="/assets/logo-icon.png" class="h-8 w-8">
+<span class="font-semibold text-lg">T&J AI Services</span>
+</div>
+
+<div class="hidden md:flex space-x-8 text-sm items-center">
+<a href="#services" class="hover:opacity-70">Services</a>
+<a href="#pricing" class="hover:opacity-70">Pricing</a>
+<a href="#roi" class="hover:opacity-70">ROI</a>
+<a href="#contact" class="hover:opacity-70">Contact</a>
+<a href="#demo" class="btn-primary">Book Demo</a>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section id="vanta-bg" class="pt-32 pb-32 text-center">
+<div class="max-w-5xl mx-auto px-6">
+
+<h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+AI That Answers.<br>
+AI That Converts.
+</h1>
+
+<p class="mt-6 text-xl text-gray-400">
+Never miss a call. Never miss revenue.
+</p>
+
+<div class="mt-10 flex justify-center gap-6">
+<a href="#pricing" class="btn-primary">View Plans</a>
+<a href="#demo" class="btn-secondary">Watch Demo</a>
+</div>
+
+<div class="mt-16">
+<img src="http://static.photos/technology/1200x630/42" class="rounded-2xl shadow-2xl mx-auto">
+</div>
+
+</div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="py-24 border-t border-white/10 text-center">
+<div class="max-w-6xl mx-auto px-6">
+
+<h2 class="text-3xl font-semibold">Trusted by 20+ Companies</h2>
+
+<div class="mt-16 grid grid-cols-2 md:grid-cols-5 gap-12 items-center opacity-60">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg">
+
+</div>
+
+<div class="mt-20 grid md:grid-cols-2 gap-12 text-left">
+
+<div class="glass p-8 rounded-2xl">
+<p class="text-lg">“It replaced our receptionist and increased bookings immediately.”</p>
+<p class="mt-4 text-gray-400">— Service Business Owner</p>
+</div>
+
+<div class="glass p-8 rounded-2xl">
+<p class="text-lg">“The ROI was obvious within days.”</p>
+<p class="mt-4 text-gray-400">— Local Contractor</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ROI -->
+<section id="roi" class="py-28 text-center bg-gradient-to-b from-black to-white/5">
+<div class="max-w-4xl mx-auto px-6">
+
+<h2 class="text-4xl font-bold">Missed Calls = Lost Revenue</h2>
+
+<div class="mt-16 glass p-12 rounded-3xl text-left">
+
+<p class="text-xl">Miss 3 calls per day</p>
+<p class="text-xl mt-4">Average job: $150</p>
+<p class="text-xl mt-4 font-semibold text-white">
+= $13,500 per month lost
+</p>
+
+</div>
+
+</div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-28 border-t border-white/10">
+<div class="max-w-7xl mx-auto px-6 text-center">
+
+<h2 class="text-4xl font-semibold">Your AI Departments</h2>
+
+<div class="mt-20 grid md:grid-cols-3 gap-12">
+
+<div class="glass p-10 rounded-2xl text-center">
+<div class="flex justify-center mb-6">
+<i data-feather="phone" class="w-10 h-10"></i>
+</div>
+<h3 class="text-xl font-semibold">AI Receptionist</h3>
+<p class="mt-4 text-gray-400">Answers and books jobs 24/7.</p>
+</div>
+
+<div class="glass p-10 rounded-2xl text-center">
+<div class="flex justify-center mb-6">
+<i data-feather="message-square" class="w-10 h-10"></i>
+</div>
+<h3 class="text-xl font-semibold">SMS AI</h3>
+<p class="mt-4 text-gray-400">Instant text responses.</p>
+</div>
+
+<div class="glass p-10 rounded-2xl text-center">
+<div class="flex justify-center mb-6">
+<i data-feather="settings" class="w-10 h-10"></i>
+</div>
+<h3 class="text-xl font-semibold">Automation</h3>
+<p class="mt-4 text-gray-400">Admin work handled automatically.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-28 border-t border-white/10 text-center">
+<div class="max-w-7xl mx-auto px-6">
+
+<h2 class="text-4xl font-semibold">Simple Monthly Plans</h2>
+
+<div class="mt-20 grid md:grid-cols-3 gap-12">
+
+<div class="glass p-10 rounded-3xl">
+<h3 class="text-xl font-semibold">Starter</h3>
+<p class="mt-8 text-4xl font-bold">$XXX<span class="text-lg text-gray-400">/mo</span></p>
+<a href="#" class="mt-8 block btn-secondary">Get Started</a>
+</div>
+
+<div class="featured-plan p-12 rounded-3xl">
+<p class="mb-4 text-sm opacity-70">Most Businesses Choose This</p>
+<h3 class="text-2xl font-semibold">Professional</h3>
+<p class="mt-8 text-5xl font-bold">$XXX<span class="text-lg text-gray-300">/mo</span></p>
+<a href="#" class="mt-8 block btn-primary">Start Now</a>
+</div>
+
+<div class="glass p-10 rounded-3xl">
+<h3 class="text-xl font-semibold">Enterprise</h3>
+<p class="mt-8 text-4xl font-bold">Custom</p>
+<a href="#" class="mt-8 block btn-secondary">Contact Sales</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- VSL -->
+<section id="demo" class="py-32 border-t border-white/10 text-center">
+<div class="max-w-5xl mx-auto px-6">
+
+<h2 class="text-4xl font-semibold">Watch How It Works</h2>
+
+<div class="mt-16 rounded-3xl overflow-hidden shadow-2xl">
+<video controls class="w-full">
+<source src="your-vsl-video.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-28 border-t border-white/10 text-center">
+<h2 class="text-4xl font-semibold">Book a Demo</h2>
+<p class="mt-6 text-gray-400">Let’s automate your revenue.</p>
+
+<a href="mailto:tyler@tnjwebdesign.ca" class="mt-10 inline-block btn-primary">
+Contact Us
+</a>
+</section>
+
+<footer class="py-12 text-center text-gray-500 border-t border-white/10">
+© 2025 T&J AI Services
+</footer>
+
+<script>
+VANTA.GLOBE({
+el: "#vanta-bg",
+color: 0xffffff,
+backgroundColor: 0x000000
+});
+feather.replace();
+</script>
+
+</body>
+</html>

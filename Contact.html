@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact The T&J Company</title>
+<link rel="icon" type="image/png" href="../Assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg1:#ffffff;
+  --bg2:#f6f8fb;
+  --text:#0f172a;
+  --sub:#64748b;
+  --card:#ffffff;
+  --border:#e2e8f0;
+  --shadow:0 25px 50px rgba(15,23,42,0.06);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:linear-gradient(to bottom,var(--bg1),var(--bg2));
+  color:var(--text);
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px 8%;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:600;
+  font-size:20px;
+}
+
+.logo img{
+  height:32px;
+}
+
+section{
+  padding:100px 8%;
+}
+
+h1,h2,h3{
+  margin-bottom:20px;
+}
+
+p{
+  color:var(--sub);
+  margin-bottom:20px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;
+  margin-top:60px;
+}
+
+.card{
+  background:var(--card);
+  padding:40px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:500;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px 16px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  margin-bottom:20px;
+  font-size:16px;
+}
+
+textarea{
+  resize:none;
+}
+
+button{
+  padding:14px 28px;
+  border-radius:12px;
+  border:none;
+  background:#000;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.contact-info div{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.contact-info i{
+  font-style:normal;
+  font-weight:700;
+  font-size:20px;
+  color:#000;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="../Assets/logo.png" alt="T&J Logo">
+    The T&J Company
+  </div>
+</nav>
+
+<section>
+  <h1>Contact The T&J Company</h1>
+  <p>Have questions or want to work with us? Fill out the form or use our direct contact info below.</p>
+
+  <div class="contact-grid">
+
+    <!-- Contact Form -->
+    <div class="card">
+      <h2>Send Us a Message</h2>
+      <form id="contact-form" action="https://formspree.io/f/xgvnkrkg" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" placeholder="John Doe" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" id="phone" placeholder="+1 (555) 123-4567">
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="5" placeholder="Your message..." required></textarea>
+
+        <button type="submit">Send Message</button>
+        <p id="form-status" style="margin-top:12px;color:var(--sub)"></p>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="card contact-info">
+      <h2>Our Team</h2>
+      <div><i>👤</i> Tyler Schaefer – CEO</div>
+      <div><i>👤</i> Jayden Persaud</div>
+      <div><i>📧</i> tyler@tnjwebdesign.ca</div>
+      <div><i>📞</i> +1 (218) 422-3485</div>
+    </div>
+
+  </div>
+</section>
+
+<footer style="padding:40px 8%;text-align:center;color:var(--sub);border-top:1px solid var(--border);">
+  © 2026 The T&J Company. All rights reserved.
+</footer>
+
+<script>
+var form = document.getElementById("contact-form");
+form.addEventListener("submit", async function(e){
+  e.preventDefault();
+  var status = document.getElementById("form-status");
+  var data = new FormData(form);
+  fetch(form.action,{
+    method:form.method,
+    body:data,
+    headers:{'Accept':'application/json'}
+  }).then(response=>{
+    if(response.ok){
+      status.innerHTML = "✅ Thanks for your submission!";
+      form.reset();
+    }else{
+      response.json().then(data=>{
+        if(Object.hasOwn(data,'errors')){
+          status.innerHTML = data["errors"].map(error=>error["message"]).join(", ");
+        }else{
+          status.innerHTML = "❌ Oops! Problem submitting form.";
+        }
+      })
+    }
+  }).catch(()=>{
+    status.innerHTML = "❌ Oops! Problem submitting form.";
+  });
+});
+</script>
+
+</body>
+</html>

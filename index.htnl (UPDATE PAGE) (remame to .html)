@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>System Update</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f14;
+  --card:#11161c;
+  --text:#e6edf3;
+  --muted:#8b98a5;
+  --accent:#10a37f;
+  --border:rgba(255,255,255,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%;
+  width:100%;
+  background:radial-gradient(circle at 50% 30%, #11161c 0%, #0b0f14 60%);
+  font-family:'Inter',sans-serif;
+  color:var(--text);
+  overflow:hidden;
+}
+
+.wrapper{
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.card{
+  width:100%;
+  max-width:560px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:48px 40px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+.logo{
+  width:40px;
+  height:40px;
+  margin:0 auto 28px;
+  border-radius:50%;
+  background:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  font-size:18px;
+  color:#000;
+}
+
+h1{
+  font-size:29px;
+  font-weight:600;
+  margin-bottom:16px;
+  letter-spacing:-0.02em;
+}
+
+p{
+  font-size:16px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:32px;
+}
+
+.time-box{
+  background:rgba(16,163,127,0.08);
+  border:1px solid rgba(16,163,127,0.25);
+  padding:18px 22px;
+  border-radius:12px;
+  font-size:15px;
+  color:var(--text);
+  font-weight:500;
+}
+
+.footer{
+  position:absolute;
+  bottom:24px;
+  left:0;
+  width:100%;
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
+  opacity:0.7;
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="card">
+    <div class="logo">T&J</div>
+    <h1>tnjwebdesign.ca is Temporarily Unavailable</h1>
+    <p>
+      tnjwebdesign.ca is currently unavailable due to a scheduled software update.
+      We’re performing maintenance to improve system performance and reliability.
+    </p>
+    <div class="time-box">
+      The system will be back online by<br><br>
+      <strong>05:00 Zulu (00:00 Local)<br>02-25-2026</strong>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 The T&J Company. All rights reserved.
+</div>
+</body>
+</html>

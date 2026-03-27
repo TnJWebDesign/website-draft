@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T&J Web Design</title>
+
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg1:#ffffff;
+  --bg2:#f6f8fb;
+  --text:#0f172a;
+  --sub:#64748b;
+  --card:#ffffff;
+  --border:#e2e8f0;
+  --shadow:0 20px 40px rgba(15,23,42,0.06);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:linear-gradient(to bottom,var(--bg1),var(--bg2));
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+section{
+  padding:120px 8%;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px 8%;
+}
+
+.logo{
+  font-weight:700;
+  font-size:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.btn-primary{
+  background:#000;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.btn-outline{
+  border:1px solid var(--border);
+  color:#000;
+}
+
+.btn-outline:hover{
+  background:#000;
+  color:#fff;
+}
+
+.hero{
+  text-align:center;
+  padding-top:60px;
+}
+
+.hero h1{
+  font-size:56px;
+  letter-spacing:-1px;
+}
+
+.hero p{
+  font-size:18px;
+  color:var(--sub);
+  max-width:700px;
+  margin:20px auto 40px;
+}
+
+h2{
+  font-size:40px;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.subtext,
+.sub{
+  text-align:center;
+  color:var(--sub);
+  max-width:600px;
+  margin:0 auto 60px;
+}
+
+/* ===== FIXED PORTFOLIO ===== */
+
+.portfolio{
+  padding:120px 8%;
+}
+
+.container{
+  max-width:1300px;
+  margin:0 auto;
+}
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:60px;
+}
+
+.portfolio-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+  border-radius:22px;
+  background:#ffffff;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  text-align:center;
+  text-decoration:none;
+  color:#0f172a;
+  transition:.3s ease;
+}
+
+.portfolio-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 60px rgba(15,23,42,0.12);
+}
+
+.portfolio-card .icon{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.portfolio-card h3{
+  font-size:18px;
+  font-weight:500;
+}
+
+/* ===== SHARED GRID ===== */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.card,
+.testimonial,
+.benefit{
+  background:#fff;
+  padding:40px;
+  border-radius:24px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  text-align:center;
+  transition:.3s ease;
+}
+
+.benefit:hover,
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 60px rgba(15,23,42,0.1);
+}
+
+.icon{
+  font-size:40px;
+  display:flex;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+/* ===== PRICING ===== */
+
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.plan{
+  background:#fff;
+  padding:50px;
+  border-radius:28px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  text-align:center;
+  transition:.3s ease;
+}
+
+.plan:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 60px rgba(15,23,42,0.12);
+}
+
+.plan.featured{
+  border:2px solid #000;
+  transform:scale(1.05);
+}
+
+.price{
+  font-size:36px;
+  font-weight:700;
+  margin:20px 0;
+}
+
+.plan ul{
+  list-style:none;
+  margin:20px 0;
+  color:var(--sub);
+  line-height:1.8;
+}
+
+.badge{
+  display:inline-block;
+  padding:6px 14px;
+  border-radius:999px;
+  background:#000;
+  color:#fff;
+  font-size:12px;
+  margin-bottom:15px;
+}
+
+footer{
+  padding:60px 8%;
+  text-align:center;
+  border-top:1px solid var(--border);
+  color:var(--sub);
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:38px;}
+  h2{font-size:28px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">T&J Web Design</div>
+  <a href="contact.html" class="btn btn-outline">Get Quote</a>
+</nav>
+
+<section class="hero">
+  <h1>Websites That Convert & Scale</h1>
+  <p>
+    High-converting websites engineered for speed, trust, and domination.
+    Not just pretty designs — growth systems.
+  </p>
+  <a href="contact.html" class="btn btn-primary">Book Strategy Call</a>
+</section>
+
+<!-- ================= PORTFOLIO SECTION ================= -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <h2>Website Portfolio</h2>
+    <p class="sub">Real layouts built for real industries.</p>
+
+    <div class="portfolio-grid">
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Tech_and_IT/" target="_blank" class="portfolio-card">
+        <div class="icon">💻</div>
+        <h3>Tech & IT Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Appliance_Installers-/" target="_blank" class="portfolio-card">
+        <div class="icon">🔧</div>
+        <h3>Appliance Installers Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Construction/" target="_blank" class="portfolio-card">
+        <div class="icon">🏗️</div>
+        <h3>Construction Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Electrical/" target="_blank" class="portfolio-card">
+        <div class="icon">⚡</div>
+        <h3>Electrical Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Product_and_E-Commerce/" target="_blank" class="portfolio-card">
+        <div class="icon">🛒</div>
+        <h3>E-Commerce Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Plumbing/" target="_blank" class="portfolio-card">
+        <div class="icon">🚰</div>
+        <h3>Plumbing Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Natural_Gas/" target="_blank" class="portfolio-card">
+        <div class="icon">🔥</div>
+        <h3>Natural Gas Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---HVAC/" target="_blank" class="portfolio-card">
+        <div class="icon">❄️</div>
+        <h3>HVAC Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Home_Maintance/" target="_blank" class="portfolio-card">
+        <div class="icon">🏠</div>
+        <h3>Home Maintenance Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---General-Renovations/" target="_blank" class="portfolio-card">
+        <div class="icon">🛠️</div>
+        <h3>Renovations Website</h3>
+      </a>
+
+      <a href="https://tnjwebdesign.github.io/ASSET---Shipping_Services/" target="_blank" class="portfolio-card">
+        <div class="icon">🚚</div>
+        <h3>Shipping Services Website</h3>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Benefits (UNCHANGED) -->
+<section>
+  <h2>Why Work With Us</h2>
+  <p class="subtext">We don’t just build websites — we build growth systems.</p>
+
+  <div class="grid">
+    <div class="benefit">
+      <div class="icon">⚡</div>
+      <h3>High-Speed Performance</h3>
+      <p>Fast loading websites to boost conversion and SEO.</p>
+    </div>
+
+    <div class="benefit">
+      <div class="icon">📈</div>
+      <h3>Conversion Focused</h3>
+      <p>Designed to turn visitors into leads and sales.</p>
+    </div>
+
+    <div class="benefit">
+      <div class="icon">📱</div>
+      <h3>Mobile Optimized</h3>
+      <p>Responsive on all devices for the best user experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials (UNCHANGED) -->
+<section>
+  <h2>What Clients Say</h2>
+  <p class="subtext">Real feedback from our satisfied clients.</p>
+
+  <div class="grid">
+    <div class="testimonial">
+      “Our leads doubled within 60 days thanks to T&J Web Design!”
+      <br><br>
+      — Local Business Owner
+    </div>
+
+    <div class="testimonial">
+      “Best investment we’ve made. Our website now converts like crazy.”
+      <br><br>
+      — Service Company Founder
+    </div>
+
+    <div class="testimonial">
+      “Professional, fast, and results-driven. Highly recommended.”
+      <br><br>
+      — E-Commerce CEO
+    </div>
+  </div>
+</section>
+
+<!-- PRICING (ONLY NEW SECTION ADDED) -->
+<section>
+  <h2>Pricing</h2>
+  <p class="subtext">Simple, transparent pricing. No hidden fees.</p>
+
+  <div class="pricing">
+
+    <div class="plan">
+      <h3>Starter</h3>
+      <div class="price">$997</div>
+      <ul>
+        <li>✔ 5 Page Website</li>
+        <li>✔ Mobile Optimized</li>
+        <li>✔ Basic SEO Setup</li>
+        <li>✔ Contact Form</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline">Get Started</a>
+    </div>
+
+    <div class="plan featured">
+      <div class="badge">Most Popular</div>
+      <h3>Growth</h3>
+      <div class="price">$1,997</div>
+      <ul>
+        <li>✔ 10+ Pages</li>
+        <li>✔ Conversion Optimization</li>
+        <li>✔ Advanced SEO</li>
+        <li>✔ Speed Optimization</li>
+        <li>✔ Analytics Setup</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <div class="plan">
+      <h3>Enterprise</h3>
+      <div class="price">Custom</div>
+      <ul>
+        <li>✔ Unlimited Pages</li>
+        <li>✔ Custom Integrations</li>
+        <li>✔ AI Automations</li>
+        <li>✔ Ongoing Support</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline">Contact Us</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA (UNCHANGED) -->
+<section style="text-align:center;">
+  <h2>Ready to Build Your High-Converting Website?</h2>
+  <p class="subtext">Let’s create a website that drives real results.</p>
+  <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+</section>
+
+<footer>
+  © 2026 T&J Web Design. The T&J Company.
+</footer>
+
+</body>
+</html>

@@ -1,212 +1,1407 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact The T&J Company</title>
-<link rel="icon" type="image/png" href="../Assets/logo.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The T&J Company | Web Design, AI Automation & Paid Ads for SMBs</title>
+    <meta name="description" content="The T&J Company builds premium websites, performance-driven paid advertising systems, and AI automation tools engineered to generate more leads and revenue for small and medium businesses.">
+    <meta name="keywords" content="web design, AI automation, paid advertising, digital marketing, small business, lead generation">
+    <meta property="og:title" content="The T&J Company | Web Design, AI Automation & Paid Ads">
+    <meta property="og:description" content="Premium digital infrastructure for small and medium businesses. More leads. More revenue. Fewer missed calls.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-:root{
-  --bg1:#ffffff;
-  --bg2:#f6f8fb;
-  --text:#0f172a;
-  --sub:#64748b;
-  --card:#ffffff;
-  --border:#e2e8f0;
-  --shadow:0 25px 50px rgba(15,23,42,0.06);
-}
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: #0D1B2A;
+            background: #F8F9FA;
+            line-height: 1.6;
+        }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-}
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
 
-body{
-  background:linear-gradient(to bottom,var(--bg1),var(--bg2));
-  color:var(--text);
-}
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:30px 8%;
-}
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:600;
-  font-size:20px;
-}
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
 
-.logo img{
-  height:32px;
-}
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: #0D1B2A;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
 
-section{
-  padding:100px 8%;
-}
+        nav.scrolled {
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
 
-h1,h2,h3{
-  margin-bottom:20px;
-}
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-p{
-  color:var(--sub);
-  margin-bottom:20px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: white;
+        }
 
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:40px;
-  margin-top:60px;
-}
+        .logo-box {
+            width: 36px;
+            height: 36px;
+            background: #FF5733;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 0.875rem;
+        }
 
-.card{
-  background:var(--card);
-  padding:40px;
-  border-radius:20px;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
-}
+        .logo-text {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
 
-label{
-  display:block;
-  margin-bottom:8px;
-  font-weight:500;
-}
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            list-style: none;
+        }
 
-input,textarea{
-  width:100%;
-  padding:12px 16px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  margin-bottom:20px;
-  font-size:16px;
-}
+        @media (min-width: 1024px) {
+            .nav-links {
+                display: flex;
+            }
+        }
 
-textarea{
-  resize:none;
-}
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
 
-button{
-  padding:14px 28px;
-  border-radius:12px;
-  border:none;
-  background:#000;
-  color:#fff;
-  font-weight:600;
-  cursor:pointer;
-  transition:.3s ease;
-}
+        .nav-links a:hover {
+            color: white;
+        }
 
-button:hover{
-  transform:translateY(-3px);
-  box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
+        .nav-links a.active {
+            color: #FF5733;
+        }
 
-.contact-info div{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:16px;
-}
+        .nav-cta {
+            display: none;
+        }
 
-.contact-info i{
-  font-style:normal;
-  font-weight:700;
-  font-size:20px;
-  color:#000;
-}
-</style>
+        @media (min-width: 1024px) {
+            .nav-cta {
+                display: block;
+            }
+        }
+
+        .btn-coral {
+            background: #FF5733;
+            color: white;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Manrope', sans-serif;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-coral:hover {
+            background: #E84620;
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            background: transparent;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Manrope', sans-serif;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0D1B2A 0%, #0f2540 60%, #0D1B2A 100%);
+            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663480618436/TnyxYxo98DTybhXkFXpZKV/hero-bg-LzUyUpRSeecEcP54Uze27N.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(13, 27, 42, 0.4), rgba(13, 27, 42, 1));
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 48rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 87, 51, 0.2);
+            border: 1px solid rgba(255, 87, 51, 0.4);
+            border-radius: 9999px;
+            padding: 0.375rem 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge span {
+            color: #FF5733;
+            font-size: 0.875rem;
+            font-weight: 600;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        .hero h1 .highlight {
+            color: #FF5733;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 32rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-ctas {
+                flex-direction: row;
+            }
+        }
+
+        .hero-ctas .btn-coral {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .hero-ctas .btn-outline {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.875rem;
+        }
+
+        .hero-features div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkmark {
+            color: #FF5733;
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #0D1B2A;
+            padding: 4rem 0;
+        }
+
+        .stats .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FF5733;
+            font-family: 'Manrope', sans-serif;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Services Section */
+        .services {
+            background: #F8F9FA;
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(255, 87, 51, 0.1);
+            border: 1px solid rgba(255, 87, 51, 0.2);
+            border-radius: 9999px;
+            padding: 0.375rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-badge span {
+            color: #FF5733;
+            font-size: 0.875rem;
+            font-weight: 600;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: #0D1B2A;
+        }
+
+        .section-header p {
+            color: rgba(13, 27, 42, 0.6);
+            font-size: 1.125rem;
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 20px 40px rgba(13, 27, 42, 0.15);
+            border-color: #FF5733;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 12rem;
+            background: #E0E0E0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13, 27, 42, 0.8), transparent);
+        }
+
+        .service-icon {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #FF5733;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #0D1B2A;
+        }
+
+        .service-content p {
+            color: rgba(13, 27, 42, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .service-benefits {
+            list-style: none;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: rgba(13, 27, 42, 0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-benefits li::before {
+            content: '✓';
+            color: #FF5733;
+            font-weight: bold;
+        }
+
+        .service-link {
+            color: #FF5733;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            font-family: 'Manrope', sans-serif;
+            transition: gap 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .service-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            background: #0D1B2A;
+            padding: 6rem 0;
+            color: white;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .why-us-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .why-us h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .why-us h2 .highlight {
+            color: #FF5733;
+        }
+
+        .why-us p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .why-us-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .why-us-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            transition: all 0.3s;
+        }
+
+        .why-us-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 87, 51, 0.3);
+        }
+
+        .why-us-item-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(255, 87, 51, 0.2);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FF5733;
+            margin-bottom: 1rem;
+        }
+
+        .why-us-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .why-us-item p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #F8F9FA;
+            padding: 6rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-left: 4px solid #FF5733;
+            border-radius: 0 0.75rem 0.75rem 0;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+            color: #FF5733;
+        }
+
+        .stars span {
+            font-size: 0.875rem;
+        }
+
+        .testimonial-quote {
+            color: rgba(13, 27, 42, 0.7);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .author-avatar {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #0D1B2A;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .author-info h4 {
+            font-size: 0.875rem;
+            color: #0D1B2A;
+            margin-bottom: 0.125rem;
+        }
+
+        .author-info p {
+            font-size: 0.75rem;
+            color: rgba(13, 27, 42, 0.5);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: white;
+            padding: 6rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            border: 2px solid #E0E0E0;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #FF5733;
+            box-shadow: 0 20px 40px rgba(255, 87, 51, 0.15);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 20px 40px rgba(13, 27, 42, 0.1);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF5733;
+            color: white;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: none;
+        }
+
+        .pricing-card.featured .pricing-badge {
+            display: block;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #0D1B2A;
+        }
+
+        .pricing-card p {
+            color: rgba(13, 27, 42, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FF5733;
+            margin-bottom: 0.5rem;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .price-period {
+            color: rgba(13, 27, 42, 0.6);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: rgba(13, 27, 42, 0.7);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: #FF5733;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #0D1B2A 0%, #1a2d42 100%);
+            padding: 6rem 0;
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact h2 .highlight {
+            color: #FF5733;
+        }
+
+        .contact p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.875rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 6rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-item-icon {
+            width: 2rem;
+            height: 2rem;
+            background: #FF5733;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .contact-item-content h4 {
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+            color: white;
+        }
+
+        .contact-item-content p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .contact-item-content a {
+            color: #FF5733;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #0D1B2A;
+            color: white;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: #FF5733;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        @media (min-width: 640px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        /* Legal Pages */
+        .legal-section {
+            background: white;
+            padding: 6rem 0;
+        }
+
+        .legal-header {
+            background: #0D1B2A;
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .legal-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        .legal-content {
+            max-width: 48rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #0D1B2A;
+        }
+
+        .legal-content p {
+            color: rgba(13, 27, 42, 0.7);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .legal-content a {
+            color: #FF5733;
+            text-decoration: none;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#home" class="logo">
+                <div class="logo-box">T&J</div>
+                <span class="logo-text">The T&J Company</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#contact" class="btn-coral">Get a Free Audit</a>
+            </div>
+        </div>
+    </nav>
 
-<nav>
-  <div class="logo">
-    <img src="../Assets/logo.png" alt="T&J Logo">
-    The T&J Company
-  </div>
-</nav>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <span>Premium Digital Services for SMBs</span>
+            </div>
+            <h1>More Leads. <span class="highlight">More Revenue.</span> Zero Missed Calls.</h1>
+            <p>The T&J Company builds premium websites, performance-driven ad systems, and AI automation tools engineered to grow small and medium businesses — fast.</p>
+            <div class="hero-features">
+                <div><span class="checkmark">✓</span> High-converting websites</div>
+                <div><span class="checkmark">✓</span> ROI-focused ad campaigns</div>
+                <div><span class="checkmark">✓</span> 24/7 AI systems</div>
+            </div>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn-coral">Get a Free Audit →</a>
+                <a href="#services" class="btn-outline">See Work Examples →</a>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h1>Contact The T&J Company</h1>
-  <p>Have questions or want to work with us? Fill out the form or use our direct contact info below.</p>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Clients Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">312%</div>
+                <div class="stat-label">Avg. Lead Increase</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">AI System Uptime</div>
+            </div>
+        </div>
+    </section>
 
-  <div class="contact-grid">
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>What We Build</span>
+                </div>
+                <h2>Three Services. One Growth System.</h2>
+                <p>We combine web design, paid ads, and AI automation into a unified revenue engine for your business.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663480618436/TnyxYxo98DTybhXkFXpZKV/web-design-service-HsJGThRwfniFSRMX2B39yr.webp" alt="Web Design">
+                        <div class="service-icon">🌐</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Web Design & Development</h3>
+                        <p>High-converting websites built for speed, trust, and results. Every pixel engineered to turn visitors into paying customers.</p>
+                        <ul class="service-benefits">
+                            <li>Mobile-first responsive design</li>
+                            <li>SEO-optimized structure</li>
+                            <li>Fast load times under 2s</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663480618436/TnyxYxo98DTybhXkFXpZKV/paid-ads-service-SsGZ8u5REXLHx2McXMYMkA.webp" alt="Paid Ads">
+                        <div class="service-icon">📊</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Paid Advertising Systems</h3>
+                        <p>Performance-driven ad campaigns on Google, Meta, and beyond. We don't just run ads — we build revenue machines.</p>
+                        <ul class="service-benefits">
+                            <li>Google & Meta Ads management</li>
+                            <li>ROI-focused campaign strategy</li>
+                            <li>Real-time performance tracking</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663480618436/TnyxYxo98DTybhXkFXpZKV/ai-automation-service-UZM7ZmuSyUKKq2hXSVFA6T.webp" alt="AI Automation">
+                        <div class="service-icon">🤖</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>AI Automation Systems</h3>
+                        <p>AI receptionists, lead follow-up bots, and workflow automation so you never miss a call, lead, or opportunity.</p>
+                        <ul class="service-benefits">
+                            <li>24/7 AI receptionist</li>
+                            <li>Automated lead nurturing</li>
+                            <li>CRM & calendar integration</li>
+                        </ul>
+                        <a href="#contact" class="service-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Contact Form -->
-    <div class="card">
-      <h2>Send Us a Message</h2>
-      <form id="contact-form" action="https://formspree.io/f/xgvnkrkg" method="POST">
-        <label for="name">Your Name</label>
-        <input type="text" name="name" id="name" placeholder="John Doe" required>
+    <!-- Why Us Section -->
+    <section id="about" class="why-us">
+        <div class="container">
+            <div class="why-us-grid">
+                <div>
+                    <div class="section-badge" style="background: rgba(255, 87, 51, 0.2); border-color: rgba(255, 87, 51, 0.4);">
+                        <span>Why T&J</span>
+                    </div>
+                    <h2>Built to Convert, <span class="highlight">Not Just Look Good</span></h2>
+                    <p>Most agencies build websites. We build growth systems. Every service we offer is engineered around one goal: generating measurable results for your business.</p>
+                    <a href="#contact" class="btn-coral">Our Story →</a>
+                </div>
+                <div class="why-us-items">
+                    <div class="why-us-item">
+                        <div class="why-us-item-icon">📈</div>
+                        <h4>Results-First Approach</h4>
+                        <p>Every decision we make is tied to measurable outcomes — more leads, more revenue, better ROI.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <div class="why-us-item-icon">⚡</div>
+                        <h4>Fast Turnaround</h4>
+                        <p>Most websites live within 14 days. Ad campaigns launch within a week. We move at the speed of business.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <div class="why-us-item-icon">🛡️</div>
+                        <h4>Proven Systems</h4>
+                        <p>We use battle-tested frameworks refined across 150+ client projects in competitive markets.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <div class="why-us-item-icon">👥</div>
+                        <h4>Dedicated Support</h4>
+                        <p>You get a dedicated account manager, not a ticket queue. Real people who know your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="you@example.com" required>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Client Results</span>
+                </div>
+                <h2>Real Businesses. Real Results.</h2>
+                <p>Don't take our word for it — hear from the business owners we've helped grow.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="testimonial-quote">"The T&J Company completely transformed our online presence. Our leads tripled within 60 days of launching the new site. Best investment we've made."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>Owner, Mitchell Plumbing Co.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="testimonial-quote">"Their AI receptionist never misses a call. We used to lose leads after hours — now our booking rate is up 40%. Incredible system."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DC</div>
+                        <div class="author-info">
+                            <h4>David Chen</h4>
+                            <p>CEO, Apex Roofing Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="testimonial-quote">"Professional, fast, and results-driven. The paid ad campaigns they built for us generate consistent, qualified leads every single week."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JT</div>
+                        <div class="author-info">
+                            <h4>Jennifer Torres</h4>
+                            <p>Director, Torres Law Group</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <label for="phone">Phone Number</label>
-        <input type="text" name="phone" id="phone" placeholder="+1 (555) 123-4567">
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Pricing</span>
+                </div>
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that fits your business goals.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p>Perfect for new businesses</p>
+                    <div class="price">$2,500</div>
+                    <div class="price-period">One-time setup</div>
+                    <ul class="pricing-features">
+                        <li>Professional website design</li>
+                        <li>Mobile responsive</li>
+                        <li>Basic SEO optimization</li>
+                        <li>1 month support</li>
+                    </ul>
+                    <a href="#contact" class="btn-coral">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Growth</h3>
+                    <p>For scaling businesses</p>
+                    <div class="price">$5,000</div>
+                    <div class="price-period">One-time setup</div>
+                    <ul class="pricing-features">
+                        <li>Premium website design</li>
+                        <li>Paid ad campaign setup</li>
+                        <li>AI automation integration</li>
+                        <li>3 months support</li>
+                        <li>Monthly optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn-coral">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p>For high-growth companies</p>
+                    <div class="price">Custom</div>
+                    <div class="price-period">Let's talk</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Growth</li>
+                        <li>Advanced AI systems</li>
+                        <li>Dedicated account manager</li>
+                        <li>Ongoing optimization</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="#contact" class="btn-coral">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <label for="message">Message</label>
-        <textarea name="message" id="message" rows="5" placeholder="Your message..." required></textarea>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div>
+                    <h2>Ready to <span class="highlight">Grow Your Business?</span></h2>
+                    <p>Book a free audit and discover exactly how we can increase your leads, revenue, and online presence within 30 days.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📧</div>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p><a href="mailto:hello@tnjwebdesign.ca">hello@tnjwebdesign.ca</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📞</div>
+                            <div class="contact-item-content">
+                                <h4>Phone</h4>
+                                <p><a href="tel:+18000000000">+1 (800) 000-0000</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div class="contact-item-content">
+                                <h4>Location</h4>
+                                <p>Canada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-coral">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <button type="submit">Send Message</button>
-        <p id="form-status" style="margin-top:12px;color:var(--sub)"></p>
-      </form>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div class="logo-box">T&J</div>
+                        <span class="logo-text">The T&J Company</span>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; margin-bottom: 1rem;">Premium web design, paid advertising, and AI automation systems engineered to grow your business.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Web Design & Development</a></li>
+                        <li><a href="#services">Paid Advertising Systems</a></li>
+                        <li><a href="#services">AI Automation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@tnjwebdesign.ca">hello@tnjwebdesign.ca</a></li>
+                        <li><a href="tel:+18000000000">+1 (800) 000-0000</a></li>
+                        <li>Canada</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 The T&J Company. All rights reserved.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- Contact Info -->
-    <div class="card contact-info">
-      <h2>Our Team</h2>
-      <div><i>👤</i> Tyler Schaefer – CEO</div>
-      <div><i>👤</i> Jayden Persaud</div>
-      <div><i>📧</i> tyler@tnjwebdesign.ca</div>
-      <div><i>📞</i> +1 (218) 422-3485</div>
-    </div>
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
 
-  </div>
-</section>
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.style.background = 'rgba(13, 27, 42, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+                navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+            } else {
+                navbar.style.background = '#0D1B2A';
+                navbar.style.backdropFilter = 'none';
+                navbar.style.boxShadow = 'none';
+            }
 
-<footer style="padding:40px 8%;text-align:center;color:var(--sub);border-top:1px solid var(--border);">
-  © 2026 The T&J Company. All rights reserved.
-</footer>
+            // Update active nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            const sections = ['home', 'about', 'services', 'pricing', 'contact'];
+            for (let section of sections) {
+                const element = document.getElementById(section);
+                if (element && window.scrollY >= element.offsetTop - 100) {
+                    document.querySelector(`a[href="#${section}"]`).classList.add('active');
+                }
+            }
+        });
 
-<script>
-var form = document.getElementById("contact-form");
-form.addEventListener("submit", async function(e){
-  e.preventDefault();
-  var status = document.getElementById("form-status");
-  var data = new FormData(form);
-  fetch(form.action,{
-    method:form.method,
-    body:data,
-    headers:{'Accept':'application/json'}
-  }).then(response=>{
-    if(response.ok){
-      status.innerHTML = "✅ Thanks for your submission!";
-      form.reset();
-    }else{
-      response.json().then(data=>{
-        if(Object.hasOwn(data,'errors')){
-          status.innerHTML = data["errors"].map(error=>error["message"]).join(", ");
-        }else{
-          status.innerHTML = "❌ Oops! Problem submitting form.";
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Create email body
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const company = formData.get('company');
+            const message = formData.get('message');
+            
+            const subject = `New Audit Request from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\nMessage:\n${message}`;
+            
+            // Open mailto link
+            window.location.href = `mailto:hello@tnjwebdesign.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Reset form
+            form.reset();
+            alert('Thank you! Please complete sending the email in your email client.');
         }
-      })
-    }
-  }).catch(()=>{
-    status.innerHTML = "❌ Oops! Problem submitting form.";
-  });
-});
-</script>
-
+    </script>
 </body>
 </html>
